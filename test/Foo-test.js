@@ -5,7 +5,13 @@ import Foo from '../src/Foo';
 
 describe("A suite", function() {
   it("contains spec with an expectation", function() {
-    expect(shallow(<Foo />).contains(<div className="foo" />)).to.equal(true);
+    expect(shallow(<Foo />).find('div.foo')).to.have.length(1);
+  });
+  it("contains spec with an tony expectation", function() {
+    expect(shallow(<Foo />).find('div.tony')).to.have.length(1)
+  });
+  it("contains spec with an bob expectation", function() {
+    expect(shallow(<Foo />).find('div.bob')).to.have.length(1)
   });
 
   it("contains spec with an expectation", function() {
